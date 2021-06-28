@@ -1,0 +1,266 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>视频 - </title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<!-- Map Style -->
+	<style>
+		#container1,
+		#container2 {
+			width: 300px;
+			height: 150px;
+		}
+	</style>
+	<!-- video -->
+	<link href="http://vjs.zencdn.net/7.11/video-js.min.css" rel="stylesheet">
+	<script src="http://vjs.zencdn.net/7.11/video.min.js"></script>
+	<script src="./assets/js/video.js"></script>
+
+
+</head>
+
+<body class="subpage" onload="javascript:dogo();">
+
+	<!-- Header -->
+	<header id="header">
+		<h1><a href="./index.html">I <img src="./images/爱心.svg" width="14dp"> LIVE HOUSE <span>by JUBEL</span></a></h1>
+		<a href="#menu">菜单</a>
+	</header>
+
+	<!-- Nav -->
+	<nav id="menu">
+		<ul class="links">
+			<li><a href="./index.html">主页</a></li>
+			<li><a href="./generic -random.html">Live House视频</a></li>
+			<li><a href="./generic - 1.html">音乐节视频</a></li>
+			<li><a href="./elements.html">厦门 Live House</a></li>
+			<li><a href="./music.html">音乐播放</a></li>
+			<li><a href="./animation.html">摇滚星球</a></li>
+			<li><a href="./animation2.html">3D地球</a></li>
+			<li><a href="./info.html">联系方式</a></li>
+		</ul>
+	</nav>
+
+	<!-- Main -->
+	<div id="main">
+
+		<!-- One -->
+		<section class="wrapper style1">
+			<div class="inner">
+				<header class="align-center">
+					<h2>回春丹 - 正义</h2>
+					<p>回春丹 - 正义</p>
+				</header>
+				<div class="video" style="margin-top: 0px;padding-top: 0px;">
+					<div class="video-wrapper" ondrop="dropIt(this)" ondragover="allowDrop(event)">
+						<video id="example_video_1" class="video-js" controls preload="none" width="1173.33"
+							height="685" poster="./images/回春丹 正义.mp4_20210523_233958.991.jpg">
+							<source src="./vedio_files/回春丹 正义.mp4" type="video/mp4">
+							<p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to
+								a web browser that
+							</p>
+						</video>
+					</div>
+					<!-- <p class="caption"></p> -->
+				</div>
+			</div>
+		</section>
+
+		<!-- Three -->
+		<!-- Three -->
+		<section class="wrapper ">
+			<div class="inner">
+				<header class="align-center">
+					<h2>音乐节精彩现场</h2>
+					<p></p>
+				</header>
+
+				<!-- 3 Column Video Section -->
+				<div class="flex flex-3">
+					<div class="video col" draggable="true" ondragstart="dragIt(event)">
+						<div class="image fit">
+							<img src="./images/1531456867.jpg" alt="" />
+							<div class="arrow">
+								<div class="icon fa-play"></div>
+							</div>
+						</div>
+						<p class="caption">
+							看风景的人-文雀
+						</p>
+						<a href="generic - 1.html" class="link" name="./vedio_files/看风景的人-文雀.mp4"><span>Click
+								Me</span></a>
+					</div>
+
+					<div class="video col" draggable="true" ondragstart="dragIt(event)">
+						<div class="image fit">
+							<img src="./images/1532311812.jpg" alt="" />
+							<div class="arrow">
+								<div class="icon fa-play"></div>
+							</div>
+						</div>
+						<p class="caption">
+							低苦艾2016全国巡演北京站
+						</p>
+						<a href="generic - 2.html" class="link" name="./vedio_files/低苦艾2016全国巡演北京站.mp4"><span>Click
+								Me</span></a>
+					</div>
+
+					<div class="video col" draggable="true" ondragstart="dragIt(event)">
+						<div class="image fit">
+							<img src="./images/1533535457.jpg" alt="" />
+							<div class="arrow">
+								<div class="icon fa-play"></div>
+							</div>
+						</div>
+						<p class="caption">
+							超级市场-intro
+						</p>
+						<a href="generic - 3.html" class="link" name="./vedio_files/超级市场-intro.mp4"><span>Click
+								Me</span></a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<script>
+			let videoSrc
+
+			let video_1_html5 = document.getElementById('example_video_1')
+
+			//console.log(video_1_html5)
+
+			// 当开始拖对象时，触发ondragstart事件，处理函数为dragIt()
+			function dragIt(e) {
+				// imgSrc = e.target.src
+				// imgAlt = e.target.alt
+				console.log(e.target.name)
+				videoSrc = e.target.name
+			}
+
+			// 当对象拖动到div元素时触发dragover事件，处理函数为allowDrop()
+			function allowDrop(e) {
+				e.preventDefault();
+			}
+
+			// 当对象被放开时会触发Drop事件，处理函数为drop()
+			function dropIt(e) {
+				// $('.progress div')[0].style.width = 0
+				// playVideo.poster = imgSrc
+				// playVideo.src = imgAlt
+
+				// playControl2()
+
+				video_1_html5.src = videoSrc
+
+				video_1_html5.play()
+			}
+
+		</script>
+
+	</div>
+
+	<!-- Footer -->
+	<footer id="footer" style="padding-top: 0px;">
+		<div class="inner"
+			style="background-image:url(./images/gallery-4.jpg);width: 100%; background-size:100% 100%; opacity: 0.9;">
+			<header class="align-center">
+				<h2>厦门 Live House</h2>
+				<p style="color: antiquewhite;">这两家是厦门仅有的两家Live House，都有非常专业的场地设备</p>
+			</header>
+			<div class="flex flex-3" style="width: 900px; margin: 0 auto;">
+				<div class="col">
+					<h3>星巢越中心</h3>
+					<ul class="alt">
+						<li><img src="./images/星巢越中心.jpeg" width="350px" height="175px"></li>
+						<li><a href="#">地址:厦门市集美区杏林湾运营中心8号楼2楼大厅</a></li>
+						<li><a href="#">电话:0592-3525202</a></li>
+						<li><a href="#">地图定位：</a></li>
+						<li>
+							<div id="container1"></div>
+						</li>
+					</ul>
+				</div>
+				<div class="col">
+					<h3>RealLive And Books</h3>
+					<ul class="alt">
+						<li><img src="./images/RealLive And Books.jpeg" width="350px" height="175px"></li>
+						<li><a href="#">地址:厦门市湖里区厦门市湖里区华昌路125号C106</a></li>
+						<li><a href="#">电话:13537774700</a></li>
+						<li><a href="#">地图定位：</a></li>
+						<li>
+							<div id="container2"></div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="copyright">
+			<ul class="icons" style="position: relative;">
+				<li>
+					<a href="javascript:" class="icon fa-qq"><span class="label">QQ</span></a>
+					<div style="position: absolute; top: -200px; left: 43%">
+						<img style="width: 200px; " src="./images/QQ.jpg" alt="">
+					</div>
+				</li>
+				<li>
+					<a href="javascript:" class="icon fa-wechat"><span class="label">WeChat</span></a>
+					<div style="position: absolute; top: -200px; left: 43%">
+						<img style="width: 200px; " src="./images/WeChat.jpg" alt="">
+					</div>
+				</li>
+				<!-- <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li> -->
+			</ul>
+		</div>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+	<script>
+		var player = videojs('example_video_1');
+		player.addChild('BigPlayButton');
+	</script>
+
+	<!-- map -->
+	<script type="text/javascript"
+	src="https://webapi.amap.com/maps?v=1.4.15&key=2e8f6e295d02c4e26f05caac93bba407&plugin=AMap.Driving"></script>
+	<script>
+		var map = new AMap.Map('container1', {
+			resizeEnable: true,
+			zoom: 19,//级别
+			center: [118.065113, 24.59253],//中心点坐标
+			// viewMode:'3D'//使用3D视图
+		});
+		var map = new AMap.Map('container2', {
+			resizeEnable: true,
+			zoom: 19,//级别
+			center: [118.097099, 24.512618],//中心点坐标
+			// viewMode:'3D'//使用3D视图
+		});
+		//实时路况图层
+		var trafficLayer = new AMap.TileLayer.Traffic({
+			zIndex: 10
+		});
+		map.add(trafficLayer);//添加图层到地图
+	</script>
+
+	<script>
+		function dogo() {
+			var urls = new Array();
+			urls[0] = "./generic - justice.html";
+			urls[1] = "./generic - train.html";
+			n = Math.floor(Math.random() * 2);
+			location.href = urls[n];
+		}
+	</script>
+</body>
+
+</html>

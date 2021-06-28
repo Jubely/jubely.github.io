@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>视频</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style class="vjs-styles-defaults">
+		.video-js {
+			width: 300px;
+			height: 150px;
+		}
+
+		.vjs-fluid {
+			padding-top: 56.25%
+		}
+	</style>
+
+	<link href="./js/app.5fbd3a9bb0ea555d3a733d121abe00ae.css" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/main.css" />
+	
+	<script type="text/javascript" async="" charset="utf-8" src="./js/core.php"></script>
+	<script type="text/javascript" async="" charset="utf-8" id="youmeng_tj" src="./js/z_stat.php"></script>
+	<script type="text/javascript" async="" charset="utf-8" src="./js/core.php"></script>
+	<script src="./js/swiper.animate1.0.3.min.js.下载"></script>
+	<script type="text/javascript" src="./js/manifest.232bff2ce6c7082d82ba.js.下载"></script>
+	<script type="text/javascript" src="./js/vendor.c707c79628a6b19964c1.js.下载"></script>
+	<script type="text/javascript" src="./js/app.21cb9b146b370e4b859b.js.下载"></script>
+
+	<style>
+		.main .video_btn button {
+			line-height: 20px;
+			text-align: center;
+		}
+
+		.baOrange {
+			background-color: rgb(255, 97, 54);
+		}
+	</style>
+	<!-- Map Style -->
+	<style>
+		#container1,
+		#container2 {
+			width: 300px;
+			height: 150px;
+		}
+	</style>
+
+</head>
+
+<body class="subpage">
+
+	<!-- Header -->
+	<header id="header">
+		<h1><a href="./index.html">I <img src="./images/爱心.svg" width="14dp"> LIVE HOUSE <span>by JUBEL</span></a></h1>
+		<a href="#menu">菜单</a>
+	</header>
+
+	<!-- Nav -->
+	<nav id="menu">
+		<ul class="links">
+			<li><a href="./index.html">主页</a></li>
+			<li><a href="./generic -random.html">Live House视频</a></li>
+			<li><a href="./generic - 1.html">音乐节视频</a></li>
+			<li><a href="./elements.html">厦门 Live House</a></li>
+			<li><a href="./music.html">音乐播放</a></li>
+			<li><a href="./animation.html">摇滚星球</a></li>
+			<li><a href="./animation2.html">3D地球</a></li>
+			<li><a href="./info.html">联系方式</a></li>
+		</ul>
+	</nav>
+
+	<!-- Main -->
+	<div>
+
+		<div id="app">
+			<div id="video">
+				<div class="main">
+					<div class="main_left">
+						<div class="pop_con"><video id="myVideo" src="./vedio_files/看风景的人-文雀.mp4" controls="controls"
+								autoplay="autoplay" controlslist="nodownload"></video></div>
+					</div>
+					<div class="main_right" style="height: 508px;">
+						<div class="video_list">
+							<dl id="dl1 " class="baOrange" style="margin-bottom: 35px;">
+								<div class="video_pic"><img src="./images/1531456867.jpg"
+										name="./vedio_files/看风景的人-文雀.mp4"></div>
+								<div class="video_info">
+									<dd class="video_title">看风景的人-文雀</dd>
+									<dd class="video_time">00:07:54</dd>
+								</div>
+							</dl>
+							<dl id="dl2" style="margin-bottom: 35px;">
+								<div class="video_pic"><img src="./images/1532311812.jpg"
+										name="./vedio_files/低苦艾2016全国巡演北京站.mp4"></div>
+								<div class="video_info">
+									<dd class="video_title">低苦艾2016全国巡演北京站</dd>
+									<dd class="video_time">02:00:24</dd>
+								</div>
+							</dl>
+							<dl id="dl3" style="margin-bottom: 35px;">
+								<div class="video_pic"><img src="./images/1533535457.jpg"
+										name="./vedio_files/超级市场-intro.mp4"></div>
+								<div class="video_info">
+									<dd class="video_title">超级市场-intro</dd>
+									<dd class="video_time">00:10:01</dd>
+								</div>
+							</dl>
+							<dl id="dl4" style="margin-bottom: 35px;">
+								<div class="video_pic"><img src="./images/1533782003.jpg"
+										name="./vedio_files/DA BANG-迷浪.mp4"></div>
+								<div class="video_info">
+									<dd class="video_title">DA BANG-迷浪</dd>
+									<dd class="video_time">00:06:06</dd>
+								</div>
+							</dl>
+						</div>
+					</div>
+					<div id="videoName" class="video_name" style="color: white;">看风景的人-文雀</div>
+					<div id="videoInfo" class="info">看风景的人-文雀</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 页面内视频转换 -->
+		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+		<script type="text/javascript">
+			let a;
+			$('.video_list').delegate("dl", "click", function () {
+				let vSrc = $(this).children().children()[0].name;
+				let vText = $(this).children("div").children(".video_title").html()
+				$('#videoName').html(vText)
+				$('#videoInfo').html(vText)
+				$('#myVideo')[0].src = vSrc
+				$('.video_list dl').removeClass("baOrange")
+				$(this).addClass("baOrange")
+			})
+		</script>
+
+	</div>
+
+	<!-- Footer -->
+	<footer id="footer" style="padding-top: 0px;">
+		<div class="inner"
+			style="background-image:url(./images/gallery-4.jpg);width: 100%; background-size:100% 100%; opacity: 0.9;">
+			<header class="align-center">
+				<h2>厦门 Live House</h2>
+				<p style="color: antiquewhite;">这两家是厦门仅有的两家Live House，都有非常专业的场地设备</p>
+			</header>
+			<div class="flex flex-3" style="width: 900px; margin: 0 auto;">
+				<div class="col">
+					<h3>星巢越中心</h3>
+					<ul class="alt">
+						<li><img src="./images/星巢越中心.jpeg" width="350px" height="175px"></li>
+						<li><a href="#">地址:厦门市集美区杏林湾运营中心8号楼2楼大厅</a></li>
+						<li><a href="#">电话:0592-3525202</a></li>
+						<li><a href="#">地图定位：</a></li>
+						<li>
+							<div id="container1"></div>
+						</li>
+					</ul>
+				</div>
+				<div class="col">
+					<h3>RealLive And Books</h3>
+					<ul class="alt">
+						<li><img src="./images/RealLive And Books.jpeg" width="350px" height="175px"></li>
+						<li><a href="#">地址:厦门市湖里区厦门市湖里区华昌路125号C106</a></li>
+						<li><a href="#">电话:13537774700</a></li>
+						<li><a href="#">地图定位：</a></li>
+						<li>
+							<div id="container2"></div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="copyright">
+			<ul class="icons" style="position: relative;">
+				<li>
+					<a href="javascript:" class="icon fa-qq"><span class="label">QQ</span></a>
+					<div style="position: absolute; top: -200px; left: 43%">
+						<img style="width: 200px; " src="./images/QQ.jpg" alt="">
+					</div>
+				</li>
+				<li>
+					<a href="javascript:" class="icon fa-wechat"><span class="label">WeChat</span></a>
+					<div style="position: absolute; top: -200px; left: 43%">
+						<img style="width: 200px; " src="./images/WeChat.jpg" alt="">
+					</div>
+				</li>
+				<!-- <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li> -->
+			</ul>
+		</div>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+	<!-- map -->
+	<script type="text/javascript"
+	src="https://webapi.amap.com/maps?v=1.4.15&key=2e8f6e295d02c4e26f05caac93bba407&plugin=AMap.Driving"></script>
+	<script>
+		var map = new AMap.Map('container1', {
+			resizeEnable: true,
+			zoom: 19,//级别
+			center: [118.065113, 24.59253],//中心点坐标
+			// viewMode:'3D'//使用3D视图
+		});
+		var map = new AMap.Map('container2', {
+			resizeEnable: true,
+			zoom: 19,//级别
+			center: [118.097099, 24.512618],//中心点坐标
+			// viewMode:'3D'//使用3D视图
+		});
+		//实时路况图层
+		var trafficLayer = new AMap.TileLayer.Traffic({
+			zIndex: 10
+		});
+		map.add(trafficLayer);//添加图层到地图
+	</script>
+
+</body>
+
+</html>

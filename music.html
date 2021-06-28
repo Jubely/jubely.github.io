@@ -1,0 +1,98 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>音乐</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="./assets/css/style3.css">
+
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            cursor: pointer;
+            position: absolute;
+        }
+    </style>
+
+</head>
+
+<body class="subpage">
+
+    <!-- Header -->
+    <header id="header">
+        <h1><a href="./index.html">I <img src="./images/爱心.svg" width="14dp"> LIVE HOUSE <span>by JUBEL</span></a></h1>
+        <a href="#menu">菜单</a>
+    </header>
+
+    <!-- Nav -->
+    <nav id="menu">
+        <ul class="links">
+            <li><a href="./index.html">主页</a></li>
+            <li><a href="./generic -random.html">Live House视频</a></li>
+            <li><a href="./generic - 1.html">音乐节视频</a></li>
+            <li><a href="./elements.html">厦门 Live House</a></li>
+            <li><a href="./music.html">音乐播放</a></li>
+            <li><a href="./animation.html">摇滚星球</a></li>
+            <li><a href="./animation2.html">3D地球</a></li>
+            <li><a href="./info.html">联系方式</a></li>
+        </ul>
+    </nav>
+
+    <canvas id="canvas"></canvas>
+
+    <div id="start"></div>
+
+    <script src="js/script.js"></script>
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- 拖拽 -->
+    <script>
+        $('div').mousedown(function (e) {
+            // e.pageX
+            var positionDiv = $(this).offset();
+            var distenceX = e.pageX - positionDiv.left;
+            var distenceY = e.pageY - positionDiv.top;
+            //alert(distenceX)
+            // alert(positionDiv.left);
+
+            $(document).mousemove(function (e) {
+                var x = e.pageX - distenceX;
+                var y = e.pageY - distenceY;
+
+                if (x < 0) {
+                    x = 0;
+                } else if (x > $(document).width() - $('div').outerWidth(true)) {
+                    x = $(document).width() - $('div').outerWidth(true);
+                }
+
+                if (y < 0) {
+                    y = 0;
+                } else if (y > $(document).height() - $('div').outerHeight(true)) {
+                    y = $(document).height() - $('div').outerHeight(true);
+                }
+
+                $('div').css({
+                    'left': x + 'px',
+                    'top': y + 'px'
+                });
+            });
+
+            $(document).mouseup(function () {
+                $(document).off('mousemove');
+            });
+        });
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>推荐</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" href="assets/css/main.css" />
+	
+	<!-- Map Style -->
+	<style>
+		#container1{
+			width: 550px;
+			height: 620px;
+		}
+		#container2 {
+			width: 550px;
+			height: 400px;
+		}
+	</style>
+
+	<!-- 路径 -->
+	<style type="text/css">
+		#panel {
+			position: fixed;
+			background-color: white;
+			max-height: 90%;
+			overflow-y: auto;
+			top: 5px;
+			width: 550px;
+			height: 200px;
+		}
+
+		#panel .amap-call {
+			background-color: #009cf9;
+			border-top-left-radius: 4px;
+			border-top-right-radius: 4px;
+		}
+
+		#panel .amap-lib-driving {
+			border-bottom-left-radius: 4px;
+			border-bottom-right-radius: 4px;
+			overflow: hidden;
+		}
+	</style>
+	<link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css" />
+	<script src="https://a.amap.com/jsapi_demos/static/demo-center/js/demoutils.js"></script>
+	<script type="text/javascript" src="https://cache.amap.com/lbs/static/addToolbar.js"></script>
+
+</head>
+
+<body>
+
+	<!-- Header -->
+	<header id="header">
+		<h1><a href="./index.html">I <img src="./images/爱心.svg" width="14dp"> LIVE HOUSE <span>by JUBEL</span></a></h1>
+		<a href="#menu">菜单</a>
+	</header>
+
+	<!-- Nav -->
+	<nav id="menu">
+		<ul class="links">
+			<li><a href="./index.html">主页</a></li>
+			<li><a href="./generic -random.html">Live House视频</a></li>
+			<li><a href="./generic - 1.html">音乐节视频</a></li>
+			<li><a href="./elements.html">厦门 Live House</a></li>
+			<li><a href="./music.html">音乐播放</a></li>
+			<li><a href="./animation.html">摇滚星球</a></li>
+			<li><a href="./animation2.html">3D地球</a></li>
+			<li><a href="./info.html">联系方式</a></li>
+		</ul>
+	</nav>
+
+
+	<!-- Footer -->
+	<footer id="footer" style="padding-top: 46px;">
+		<div class="inner"
+			style="background-image:url(./images/gallery-4.jpg);background-repeat:repeat-y;width: 100%; background-size:100% 100%; opacity: 0.9;">
+			<header class="align-center">
+				<h2>厦门 Live House</h2>
+				<p style="color: antiquewhite;">这两家是厦门仅有的两家Live House，都有非常专业的场地设备</p>
+			</header>
+			<div class="flex flex-3" style="width: 1100px; margin: 0 auto;">
+				<div class="col">
+					<h3>星巢越中心</h3>
+					<ul class="alt">
+						<li><img src="./images/星巢越中心.jpeg" width="350px" height="175px"></li>
+						<li><a href="#">地址:厦门市集美区杏林湾运营中心8号楼2楼大厅</a></li>
+						<li><a href="#">电话:0592-3525202</a></li>
+						<li><a href="#">地图定位：</a></li>
+						<li>
+							<div id="container1"></div>
+						</li>
+					</ul>
+				</div>
+				<div class="col">
+					<h3>RealLive And Books</h3>
+					<ul class="alt">
+						<li><img src="./images/RealLive And Books.jpeg" width="350px" height="175px"></li>
+						<li><a href="#">地址:厦门市湖里区厦门市湖里区华昌路125号C106</a></li>
+						<li><a href="#">电话:13537774700</a></li>
+						<li><a href="#">地图定位：</a></li>
+						<li>
+							<div id="container2"></div>
+						</li>
+						<li>
+							<div id="panel" style="position: relative;"></div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</footer>
+
+	<!--Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+
+	</script>
+
+	<!-- map -->
+	<script type="text/javascript"
+	src="https://webapi.amap.com/maps?v=1.4.15&key=2e8f6e295d02c4e26f05caac93bba407&plugin=AMap.Driving"></script>
+	<script>
+		var map = new AMap.Map('container1', {
+			resizeEnable: true,
+			showIndoorMap: true, //显示地图自带的室内地图图层
+			zoom: 19,//级别
+			center: [118.065113, 24.59253],//中心点坐标
+			// viewMode:'3D'//使用3D视图
+		});
+		var map = new AMap.Map('container2', {
+			resizeEnable: true,
+			zoom: 19,//级别
+			center: [118.097099, 24.512618],//中心点坐标
+			// viewMode:'3D'//使用3D视图
+		});
+		//实时路况图层
+		var trafficLayer = new AMap.TileLayer.Traffic({
+			zIndex: 10
+		});
+		map.add(trafficLayer);//添加图层到地图
+
+
+
+		var map = new AMap.Map('container1', {
+			center: [118.065113, 24.59253],
+			viewMode: '3D',
+			pitch: 60,
+			rotation: -35,
+			// 隐藏默认楼块
+			features: ['bg', 'road', 'point'],
+			mapStyle: 'amap://styles/light',
+			layers: [
+				// 高德默认标准图层
+				new AMap.TileLayer.Satellite(),
+				// 楼块图层
+				new AMap.Buildings({
+					zooms: [16, 18],
+					zIndex: 10,
+					heightFactor: 2 //2倍于默认高度，3D下有效
+				})
+			],
+			zoom: 16.8,
+		});
+
+
+		var map = new AMap.Map('container2', {
+			// mapStyle: 'amap://styles/macaron', //设置地图的显示样式
+			showIndoorMap: true, //显示地图自带的室内地图图层
+			resizeEnable: true,
+			zoom: 20,
+			center: [118.097099, 24.512618]
+		});
+
+
+		//构造路线导航类
+		var driving = new AMap.Driving({
+			map: map,
+			panel: "panel"
+		});
+		// 根据起终点名称规划驾车导航路线
+		driving.search([
+			{ keyword: '厦门理工学院', city: '厦门' },
+			{ keyword: 'RealLive and Book', city: '厦门' }
+		], function (status, result) {
+			// result 即是对应的驾车导航信息，相关数据结构文档请参考 https://lbs.amap.com/api/javascript-api/reference/route-search#m_DrivingResult
+			if (status === 'complete') {
+				log.success('绘制驾车路线完成')
+			} else {
+				log.error('获取驾车数据失败：' + result)
+			}
+		});
+
+
+		// 同时引入工具条插件，比例尺插件和鹰眼插件
+		AMap.plugin([
+			'AMap.ToolBar',
+			'AMap.Scale',
+			'AMap.OverView',
+			'AMap.MapType',
+			'AMap.Geolocation',
+		], function () {
+			// 在图面添加工具条控件，工具条控件集成了缩放、平移、定位等功能按钮在内的组合控件
+			map.addControl(new AMap.ToolBar());
+
+			// 在图面添加比例尺控件，展示地图在当前层级和纬度下的比例尺
+			map.addControl(new AMap.Scale());
+
+			// 在图面添加鹰眼控件，在地图右下角显示地图的缩略图
+			map.addControl(new AMap.OverView({ isOpen: true }));
+
+			// 在图面添加类别切换控件，实现默认图层与卫星图、实施交通图层之间切换的控制
+			map.addControl(new AMap.MapType());
+
+			// 在图面添加定位控件，用来获取和展示用户主机所在的经纬度位置
+			map.addControl(new AMap.Geolocation());
+		});
+
+	</script>
+
+
+</body>
+
+</html>
